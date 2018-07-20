@@ -1,0 +1,22 @@
+insert into axf_wheel(img, name, trackid, isDelete) values("http://img01.bqstatic.com//upload/activity/2017031716035274.jpg@90Q.jpg", "suannainvwang","21870",False),("http://img01.bqstatic.com//upload/activity/2017031710450787.jpg@90Q.jpg", "youxuanshengnvguo","21869",False),("http://img01.bqstatic.com//upload/activity/20170317104522982.jpg@90Q.jpg","yilisuannaidafangjia","21862",False),("http://img01.bqstatic.com//upload/activity/2017032116081698.jpg@90Q.jpg","wafuxiaozi","21770",False),("http://img01.bqstatic.com//upload/activity/2017032117283348.jpg@90Q.jpg","langbosenshipin","21874",False)；
+
+
+insert into axf_nav(img, name, trackid, isDelete) values("http://img01.bqstatic.com//upload/activity/2017032016495169.png","每日必抢","21851",False),("http://img01.bqstatic.com//upload/activity/2016121920130294.png","每日签到","21753",False),("http://img01.bqstatic.com//upload/activity/2017031518404137.png","鲜蜂力荐","21854",False),("http://img01.bqstatic.com//upload/activity/2017010517013925.png","鲜货直供","21749",False)
+
+
+
+insert into axf_mustbuy(img, name, trackid, isDelete) values("http://img01.bqstatic.com//upload/activity/2017031715194326.jpg@90Q.jpg","酸奶女王","21870",False),("http://img01.bqstatic.com//upload/activity/cms_118826_1489742316.jpg@90Q.jpg","鲜果女王","21861",False),("http://img01.bqstatic.com//upload/activity/2017031011044918.jpg@90Q.jpg","麻辣女王","21866",False),("http://img01.bqstatic.com//upload/activity/2017022318314545.jpg@90Q.jpg","鲜货直供-果析","21858",False)
+
+
+insert into axf_shop(img, name, trackid, isDelete) values("http://img01.bqstatic.com//upload/activity/2016121616565087.png@90Q.png","shansongchaoshi","1464",False),("http://img01.bqstatic.com//upload/activity/2017031018405396.png@90Q.png","rexiaobang","104749",False),("http://img01.bqstatic.com//upload/activity/2016121618424334.png@90Q.png","niunaimianbao","103536",False),("http://img01.bqstatic.com//upload/activity/2016121617150246.png@90Q.png","yinliaojiushui","103549",False),("http://img01.bqstatic.com//upload/activity/2017031318520359.jpg@90Q.jpg","more","100001",False),("http://img01.bqstatic.com//upload/activity/201612161714501.png@90Q.png","youxuanshuigou","103532",False),("http://img01.bqstatic.com//upload/activity/2016121618550639.png@90Q.png","luwei-yahuobunengting","21742",False),("http://img01.bqstatic.com//upload/activity/2016121618550639.png@90Q.png","xianfenglijian","21854",False),("http://img01.bqstatic.com//upload/activity/2016121618232773.png@90Q.png","lingshihongpa","21142",False),("http://img01.bqstatic.com//upload/activity/2016121618235123.png@90Q.png","zhengxianggou","20581",False);
+
+
+insert into axf_mainshow(trackid, name, img, categoryid, brandname, img1, childcid1, productid1, longname1, price1, marketprice1, img2, childcid2, productid2, longname2, price2, marketprice2, img3, childcid3, productid3, longname3, price3, marketprice3) values("21782","优选水果","http://img01.bqstatic.com//upload/activity/2017031018205492.jpg@90Q.jpg","103532","爱鲜蜂", "http://img01.bqstatic.com/upload/goods/201/701/1916/20170119164159_996462.jpg@200w_200h_90Q","103533","118824", "西瓜","25.80","25.8", "http://img01.bqstatic.com/upload/goods/201/701/1916/20170119164159_996462.jpg@200w_200h_90Q","103533","118824", "西瓜", "25.80","25.8" ,"http://img01.bqstatic.com/upload/goods/201/701/1916/20170119164159_996462.jpg@200w_200h_90Q","103533","118824", "西瓜","25.80","25.8" )
+
+
+
+
+market页面分组
+insert into axf_foodtypes(typeid, typename, childtypenames, typesort) values("104749","HOT","ALL:0",1),("104747","NEW","ALL:0",2),("103532","BEST FRUIT","ALL:0#Import Fruit:103534#Domestically:103533",3),("103581","luweishushi","ALL:0",4),("103536","Milk brand","ALL:0#suannai:103537#niunaidoujiang:103538#brand cake:103540",5),("103549","Drink","ALL:0#Water:103550#Tea Coffee:103554#Red Crow:103553#Drink:103555#Juice:103551#Cocacool:103552#Whole:104503#Protein:104489#Import Drink:103556",6),("103541","Snack","ALL:0#Import snak:103547#cookie:103544#penghua:103541#penus:103542#rouganmijian:103546#chooco:103545",7),("103557","Quikt Food","ALL:0#cup men:103558#huotui:103559#sudongmian:103562#xiafan:103560#kan:103561#chongyin:103563",8),("103569","cyomi","ALL:0#zaliangyou:103570#tiaowei:103571#tiaoweijiang:103572",9),("103575","LIFE","ALL:0#huli:103576#papar:103578#richang:103580#qingjie:103577",10),("104958","Ice","ALL:0",11);
+
+

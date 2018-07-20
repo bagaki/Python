@@ -1,0 +1,27 @@
+.bill > p{
+	padding: 0 03rem;
+	font-size: 0.3rem;
+	color: lightgrey;
+}
+
+.bill > p:first-child:before{
+	width: 0.2rem;
+	height: 0.3rem;
+	background: yellow;
+	content: ".";
+	color: yellow;
+	margin-right: 0.2rem;
+}
+
+.payTheBill > p > span:last-child:before{
+	content: "Y";
+	font-size: 0.35rem;
+}
+.payTheBill > a{
+	background: yellow;
+	position: absolute;
+	right: 0;
+	line-height: 1.5rem;
+	top: 0;
+	padding: 0 0.7rem;
+}

@@ -1,0 +1,180 @@
+一、企业官网
+    - 瀑布流
+        
+    - 组合搜索
+        目的：查找视频
+               models.Video.objects.filter(cg_id=1,lv_id=2)
+               dic = {}
+               dic['cg_id'] = 1  # dic['cg__name']='Python'
+               dic['lv_id'] = 2  # - student_list = Models.Student.objects.all()
+        - 
+          <div class='container'>
+            <div class='item' style='float:left;'>
+                {% for row in student_list %}
+                    <img src={{row.pic}}>
+                {%endfor%}
+            </div>
+          </div>
+          ===> 三列
+                - 模版渲染实现
+                - JS实现（js进行求余）
+    dic['lv__name']='初级
+               models.Video.objects.filter(**dic)
+    
+        作业：
+            1. 再创建一张表（M2M -> 分类）
+            2. 页面显示：方向
+            3. URL: video-0-0-0.html
+            4. 根据URL动态查询指定结果...
+    
+        - 条件无关系
+        
+        
+    - ...
+    示例：sparta
+            - 安装python27
+            - pip2 install django==1.7.8
+            - pip2 install Pillow
+            
+二、博客系统
+    project
+        - 配置文件
+        - 静态文件
+        - 模版文件
+        - app00
+            - models
+          
+        - app01
+            - views
+            - urls
+        - app02
+            - views
+            - urls
+
+    project
+        - 配置文件
+        - 静态文件
+        - 模版文件
+        - app00
+            - models
+            
+            - views
+                def get_user(request):
+                    return HttpResponse(json.dumps(''))
+            - urls.py
+                user -> get_user
+                    
+    project
+        - 配置文件
+        - 静态文件
+        - 模版文件
+        - app01
+            - views
+            - urls
+        - app02
+            - views
+            - urls
+            
+    ==============================================
+        project
+        - 配置文件
+        - 静态文件
+        - 模版文件
+        - appdb
+            - models
+            
+        - app01
+            - views # 引入 appdb.models.UserInfo.objects.all()
+            - urls
+        - app02
+            - views # 引入 appdb.models.UserInfo.objects.all()
+            - urls
+               
+               
+        # 三层架构 DDD
+        # 数据访问层  业务处理层
+        # DAL           BLL       UI
+        # DAO           Service   UI
+        
+        project
+        - 配置文件
+        - 静态文件
+        - 模版文件
+        - dao，reposigory
+            - models
+            - userinfo.py
+                - get_all()
+            - blog.py
+                - 
+        - app01
+            - 业务处理
+            - views # userinf.get_all()
+            - urls
+        - app02
+            - views # userinf.get_all()
+            - urls
+        
+    一、目录介绍
+    
+        project:
+            - backend: 后台管理
+            - web:     主站
+            - repository: 数据访问
+            
+        ==》 数据访问层提取出来   
+            
+    二、功能
+        主站：
+            - 首页        http://127.0.0.1:8000/ 读取article表
+            - 个人主站    http://127.0.0.1:8000/wupeiqi.html  今日个人博客
+                          http://127.0.0.1:8000/xiaohu.html  今日个人博客
+                          http://127.0.0.1:8000/xiaohubi.html  今日个人博客
+                          
+                          获取site参数，获取到blog对象，分类、标签、个人信息、博文
+                          # 主题定制：练习
+            - 个人博文    http://127.0.0.1:8000/xiaohubi/123.html
+            - 个人博文筛选http://127.0.0.1:8000/xiaohubi/tag/美女.html
+            
+             
+        后台管理：
+            - 博文管理
+            - 分类
+            - 标签
+            - 个人信息和博客（头像，昵称，标题，主题）
+            
+    三、KindEditor
+        - 基本操作 **
+        - 文件上传 ***
+        - 文件空间管理 *
+        - 文件XSS攻击（白名单）
+    
+    - 个人博客注册
+    - 个人主页
+    - 个人后台管理
+    ====
+    - 主题定制
+    - Editor(XSS)
+         TinyEditor
+         UEEditor
+         CkEditor
+         KindEditor
+
+         
+    练习：
+        - 单独知识点
+        - 梳理示例流程
+        - 首页，读取文章
+        - 文章发布：三个用户
+        - 定制主题
+         
+三、Tornado
+        - Web框架
+        - Tornado内置模块实现爬虫
+
+四、爬虫
+    - requests
+    - beatifulsoup
+    - scrapy框架
+
+
+

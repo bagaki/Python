@@ -1,0 +1,124 @@
+1、MySQL安装
+    下载压缩包解压
+    初始化
+    启动
+    连接客户端
+    发送指令：
+        show databases;
+        create databases db1;
+
+2、连接
+    默认用户名：root
+
+    show databases;
+    user 数据库名;
+    show tables;
+    选中表中的所有列：select * from 表名;
+
+    mysql数据库user表
+    use mysql;
+    select user, host from user;
+
+    创建用户：
+        create user 'alex'@'192.168.1.1' identified by '123123';
+        create user 'alex'@'192.168.1.%' identified by '123123';
+        create user 'alex'@'%' identified by '123123';
+    授权：
+        权限 人
+
+        grant select,insert,update on db1.t1 to 'alex'@'%';
+        grant all privileges on db1.t1 to 'alex'@'%';
+
+        revoke all privileges from db1.t1 to 'alex'@'%';
+
+    DBA:用户名密码
+
+3、SQL语句规则
+
+    操作文件夹
+        create database db2;
+        create database db2 default charset utf8;   # 可以写入中文
+
+        show databases;
+        drop database db2;    # 删除数据库
+
+    操作文件（表）
+         show tables;
+         create table t1(id int, name char(10)) default charset=utf8;
+         create table t2(id int, name char(10)) engine=innodb default charset=utf8;
+         create table t3(id int auto_increment, name char(10)) engine=innodb default charset=utf8;
+
+         create table t1{
+            列名 类型 null,
+            列名 类型 not null,
+            列名 类型 not null auto_increment primary key,
+            id int,
+            name char(10)
+         }engine=innodb default charset=utf8;
+
+         # innodb  支持事务，原子性操作，更安全，更适合大数据
+         # myisam
+
+         auto_increment 表示 自增
+         primary key    表示 约束（不能重复且不能为空）；加速查找
+         not null       表示 是否为空
+
+         数据类型：
+             数字：
+                 tinyint
+                 int
+                 bigint
+
+                 FLOAT
+                     0.0000000010230
+                 DOUBLE
+                     0.00000000000000010000000012300123
+                     0.000000000012300000000000000000
+                 decimal
+                     0.1
+
+             字符串
+                  char(10)   速度快
+                      root
+                  varchar(10)  节省空间
+                      root
+                  PS：创建数据表定长列往前放
+
+                  text
+
+                  上传文件：
+                      文件存硬盘
+                      db存路径
+
+             时间类型
+                 DATETIME
+
+             enum
+             set
+
+         create table t1(
+             id int not null auto_increment primary key,
+             name char(10),
+         )engine=innodb default charset=utf8;
+
+    清空表
+        delete from t1;
+        truncate table t1;  # 将自动排序的auto_increment一并清空，重新排序
+
+    删除表
+        drop table t1;
+
+
+4、操作文件中内容
+    插入数据：
+        insert into t1(id, name) values(1, 'alex');
+
+    删除：
+        delete from t1 where id<6;
+
+    修改：
+        update t1 set age=18;
+        update t1 set age=18 where age=17;
+
+    查看数据：
+        select * from t1;

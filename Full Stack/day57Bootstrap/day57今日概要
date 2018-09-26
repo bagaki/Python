@@ -1,0 +1,7 @@
+1.Bootstrap
+   1.样式类
+    1.栅格系统
+        0.包含在container里面
+        1.每一行均分成12列（.col-xs-;.col-sm;.col-md;.col-lg 必须放在row中）
+        2.每个标签可以总定义占的列数（.col-xs-;.col-sm;.col-md;.col-lg）
+

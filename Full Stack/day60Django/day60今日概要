@@ -1,0 +1,49 @@
+关于HTTP协议：
+    1.浏览器往服务端发的叫 请求（request）
+        请求的消息格式：
+            请求方法 路径 HTTP/1.1\r\n
+            k1:v1\r\n
+            k2:v2\r\n
+            \r\n
+            请求数据
+    2.服务端往浏览器发的叫 响应（response）
+        响应的消息格式：
+            HTTP/1.1 状态码 状态描述符 \r\n
+            k1:v1\r\n
+            k2:v2\r\n
+            \r\n
+            响应正文 <-- html的内容
+
+动态的网页：
+    本质上都是字符串的替换
+字符串替换发生在什么地方：
+        在服务端替换完再返回给浏览器！！！
+
+总结：
+    1.web框架的本质：
+        socket服务端 与 浏览器的通信
+
+    2.socket服务端和功能划分：
+        a.负责与浏览器收发消息（socket）--> wsgiref/uWsgi/gunicorn...
+        b.根据用户访问不同的路径执行不同的函数
+        c.从HTML读取出内容，并且完成字符串的替换 -->  jinji2(模板语言)
+
+    3.Python中，web框架的分类：
+        1.按上面三个功能划分：
+            1.框架自带上面a,b,c三点        --> tornado
+            2.框架自带b和c，使用第三方的a  --> Django
+            3.框架自带b，受用第三方的a和c  --> Flask
+
+        2.按另一个维度来划分：
+            1.Django   -->  大而全
+            2.其他     --> Flask（轻量级）
+
+3.新建Django项目
+    django-amin startproject mysite
+    pycharm创建：
+        file --> new project --> 左侧选Django --> 右侧填项目路径，并勾选python.exe
+
+4.设置Django项目：
+    1.settings.py
+        1.配置HTML文件存放的位置
+        2.配置静态文件存放的位置

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="MUJI_NIPPON_VERSION.css">
+
+    <title>MUJI</title>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://img.muji.net/img/common/logo-muji.svg" width="128" height="20"
+                 alt="無印良品">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--<form class="form-inline my-2 my-lg-0">-->
+            <div class="input-group mb-1">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <img src="https://img.muji.net/img/common/icon-search.svg" width="16" height="16" alt="">
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                       placeholder="商品名・商品番号を入力" style="width: 40%;">
+            </div>
+            <!--</form>-->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <img src="https://img.muji.net/img/common/icon-cart.svg" width="26" height="26">
+                        <span class="m-common__header__cart__label" style="display: block;">カート</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="https://img.muji.net/img/common/icon-account.svg" width="26" height="26" alt="">
+                        <span class="m-common__header__cart__label" style="display: block;">ログイン</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">
+                        <img src="https://img.muji.net/img/common/icon-info.svg" width="26" height="26"
+                             alt="">
+                        <span class="m-common__header__cart__label" style="display: block;">サポート</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+            <div class="sidebar-sticky">
+                <img src="https://www.muji.net/img/store/common/sprite_sidenav.png" height="500">
+            </div>
+        </nav>
+
+        <main class="content col-md-9 ml-sm-auto col-lg-10 px-4">
+            <!--お知らせ-->
+            <div id="info" role="main">
+                <dl>
+                    <dt>お知らせ</dt>
+                    <dd><a href="https://www.muji.net/store/cmdty/donation/0299671000000">・「北海道地震被災者支援」募金券を開始しました。</a>
+                    </dd>
+                    <dd><a href="https://www.muji.net/mt/media/archives/2018/09/06_173748.html">・「平成30年北海道胆振東部地震」による一部地域での配送停止・遅延について</a>
+                    </dd>
+                    <dd><a href="https://www.muji.net/mt/media/archives/2018/09/05_181130.html">・「台風21号」の影響による一部地域での配送停止・遅延について</a>
+                    </dd>
+                    <dd><a href="http://www.muji.net/mt/media/archives/2018/07/09_094246.html">・「平成30年7月豪雨（西日本豪雨）」による一部地域での配送停止について</a>
+                    </dd>
+                </dl>
+            </div>
+
+            <div id="main" role="toolbar">
+                <main role="main" class="content-adv">
+                    <!--main top pic1-->
+                    <section class="top-list">
+                        <article class="top-list-PC">
+                            <a href="#"><img src="https://www.muji.com/jp/img/panel/main/flannel2018_pc.png"></a>
+                        </article>
+                    </section>
+
+                    <!--特集-->
+                    <section class="top-list-sp">
+                        <header class="top-sp-header">
+                            <div class="top-title">
+                                <h1>特集</h1>
+                                <div class="top-more">
+                                    <a href="#">すべての特集</a>
+                                </div>
+                            </div>
+                        </header>
+                        <ul class="top-tks">
+                            <li class="slick-slide00" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/store/panel/c18083101_640.png" alt>
+                                        <h1 class="top-article-title"></h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide01" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/store/panel/pre-order18aw_640.jpg"
+                                             alt="ネットストア限定<br>衣料品2018秋冬 先行予約">
+                                        <h1 class="top-article-title">"ネットストア限定<br>衣料品2018秋冬 先行予約"</h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide02" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/panel/basicitems_640.jpg" alt>
+                                        <h1 class="top-article-title"></h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide03" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/store/panel/180518_PP.png" alt>
+                                        <h1 class="top-article-title"></h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide04" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/panel/roombuilding_640.jpg"
+                                             alt="理想の部屋づくり相談キャンペーン">
+                                        <h1 class="top-article-title">理想の部屋づくり相談キャンペーン</h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide05" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/img/mujilabo/mujilabo_640.png" alt>
+                                        <h1 class="top-article-title"></h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide06" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/panel/180907_styling_advisor_coordinate_640.jpg"
+                                             alt="スタイリング事例集">
+                                        <h1 class="top-article-title">スタイリング事例集</h1>
+                                    </a>
+                                </article>
+                            </li>
+                            <li class="slick-slide07" tabindex="-1">
+                                <article class="top-tks-article">
+                                    <a href="#" tabindex="-1">
+                                        <img src="https://www.muji.com/jp/img/store/panel/c11081901_640.png" alt="">
+                                        <h1></h1>
+                                    </a>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!--新商品-->
+                    <section class="new-product">
+                        <div class="top-title">
+                            <h1>新商品</h1>
+                            <div class="top-more">
+                                <a href="#">すべての新商品</a>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <ul class="product-item">
+                                <li>
+                                    <h2>衣料品 新商品一覧</h2>
+                                    <a href="#"><img src="https://www.muji.com/jp/img/store/panel/s10901_640_180921.jpg" alt></a>
+                                </li>
+                                <li>
+                                    <h2>生活雑貨 新商品一覧</h2>
+                                    <a href="#"><img src="https://www.muji.com/jp/img/store/panel/s10908_640.jpg" alt></a>
+                                </li>
+                                <li>
+                                    <h2>食品 新商品一覧</h2>
+                                    <a href="#"><img src="https://www.muji.com/jp/img/store/panel/s10905_640_180921.jpg" alt></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!--期间限定-->
+                    <section class="limit-price">
+                        <div class="top-title">
+                            <h1>期間限定価格</h1>
+                            <div class="top-more">
+                                <a href="#">すべての期間限定価格</a>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <ul class="product-item">
+                                <li>
+                                    <h2>衣料品 期間限定価格一覧</h2>
+                                    <a href="#">
+                                        <div class="price-icon">
+                                            <img src="https://img.muji.net/img/store/campaign/C09110201/price_icon.png" class="priceDetail" alt>
+                                        </div>
+                                        <img src="https://www.muji.com/jp/img/store/panel/s000051041_640.jpg" alt>
+                                        <span class="title">婦人オーガニックコットン長袖Tシャツ／七分袖Tシャツ 1点税込990円の品→よりどり2点で税込1,490円 など</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <h2>生活雑貨 期間限定価格一覧</h2>
+                                    <a href="#">
+                                        <div class="price-icon">
+                                            <img src="https://img.muji.net/img/store/campaign/C09110201/price_icon.png" class="priceDetail" alt>
+                                        </div>
+                                        <img src="https://www.muji.com/jp/img/store/panel/s105005035_640.jpg" alt>
+                                        <span class="title">オーガニックコットン三重ガーゼ寝装カバー各種 2点以上で15％OFF など</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <h2>食品 期間限定価格一覧</h2>
+                                    <a href="#">
+                                        <div class="price-icon">
+                                            <img src="https://img.muji.net/img/store/campaign/C09110201/price_icon.png" class="priceDetail" alt>
+                                        </div>
+                                        <img src="https://www.muji.com/jp/img/store/panel/s3005103_640.jpg" alt>
+                                        <span class="title">レトルトカレー3点以上で15％OFF など</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!--每日推荐+ 配送-->
+                    <section class="article-recommed">
+                        <div class="article-item article_first-item">
+                            <a href="#">
+                                <h2>毎日の無印良品</h2>
+                                <div class="article_first-item-itemlist">
+                                    <ul>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_01.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_02.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_03.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_04.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_05.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_06.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_07.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_08.jpg" alt></li>
+                                        <li><img src="https://www.muji.com/jp/img/store/top/basicitems_09.jpg" alt></li>
+                                    </ul>
+                                </div>
+                                <span class="article_first-item-feel">ネットストア限定 対象商品配送料無料</span>
+                            </a>
+                        </div>
+                        <div class="article-item article_last-item article_last-service">
+                            <a href="#">
+                                <h2>ネットストアの便利なサービス</h2>
+                                <span class="article_last-service-inner">
+                                    <ul class="article_last-service-img">
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_deliveryvan.png" alt>
+                                            </figure>
+                                            <h3 class="article_last-service-freeshopping">
+                                                <span class="article_last-service-subtitle">
+                                                    <span>一定額以上の</span>
+                                                    <span>お買い上げで</span>
+                                                </span>
+                                                配送料無料
+                                            </h3>
+                                            <p class="article_last-service-lead">小型商品は税込5,000円以上、大型家具・家電は税込150,000円以上で、配送料無料</p>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_storage.png">
+                                            </figure>
+                                            <h3 class="article_last-service-freeshopping">
+                                                <span class="article_last-service-subtitle">
+                                                    <span>ポリプロピレン</span>
+                                                    <span>衣装ケースなど</span>
+                                                </span>
+                                                配送料無料
+                                            </h3>
+                                            <p class="article_last-service-lead">対象商品が配送料無料になりました</p>
+                                        </li>
+
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_deliveryvan02.png">
+                                            </figure>
+                                            <h3>
+                                                小型商品の
+                                                <br>
+                                                配送料490円
+                                            </h3>
+                                            <p class="article_last-service-lead">配送料区分Aの商品の配送料が490円になりました</p>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_box.png">
+                                            </figure>
+                                            <h3>
+                                                えらべる
+                                                <br>
+                                                受取方法
+                                            </h3>
+                                            <p class="article_last-service-lead">ご自宅への配送以外にも、店舗受取や、コンビニ受取をご利用いただけます</p>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_shirt_s.png">
+                                            </figure>
+                                            <h3>
+                                                XS・XXL
+                                                <br>
+                                                サイズ
+                                            </h3>
+                                            <p class="article_last-service-lead">店舗からのお取り寄せや、店舗受取も可能です</p>
+                                        </li>
+                                        <li>
+                                            <figure>
+                                                <img src="https://www.muji.com/jp/store/service/img/service_hanger_s.png">
+                                            </figure>
+                                            <h3>まとめ買い</h3>
+                                            <p class="article_last-service-lead">ケースでお届けするから5％お得</p>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!--商品-->
+                    <section class="product-list">
+                        <div class="top-title">
+                            <h1>商品</h1>
+                        </div>
+                        <div class="wrap">
+                            <h2>衣料品</h2>
+                            <ul class="product-cloth">
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002254056_01_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">婦人ウェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738543602_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">婦人インナーウェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002302801_01_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">紳士ウェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337733763_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">紳士インナーウェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738463351_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">靴下</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738777656_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">靴</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738175360_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">バッグ</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002198411_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">服飾雑貨</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002378257_01_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">MUJI Labo婦人</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002377168_01_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">MUJI Labo紳士</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>子供・マタニティ</h2>
+                            <ul class="product-child">
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002214500_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ベビー（80-100cm）</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002207953_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">キッズ（110-150cm）</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002291860_01_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">マタニティ・新生児</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4934761364056_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">子供用品・家具・三輪車</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>家具・インテリア・家電</h2>
+                            <ul class="product-household">
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315874859_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">収納家具</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4934761179391_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ユニットシェルフ</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315253586_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">収納用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738996446_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">小物収納用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315901982_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">テーブル・チェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337035393_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">デスク・チェア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4548718013180_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">THONET</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4548076606383_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">REAL FURNITURE</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315256440_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ベッド</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337288317_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">布団・寝具</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337408135_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ソファ</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002422646_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ラグ・クッション・スリッパ</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738923169_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">カーテン・ブラインド</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002405120_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">インテリア用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315236657_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">家電・照明</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>ヘルス＆ビューティー</h2>
+                            <ul class="product-healthandbeauty">
+                                <li style="background-image: url(https://img.muji.net/img/item/4548076448334_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">スキンケア用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002124960_02_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">メイクアップ用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738970286_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ヘアケア</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738380078_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ボディケア・入浴剤</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315294237_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">エッセンシャルオイル・アロマポット</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738304425_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ポーチ・小分け容器</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>雑貨・日用品</h2>
+                            <ul class="product-zara">
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337083264_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">食器</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4548718428342_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">キッチン用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738979517_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">タオル・バス・トイレ用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315915620_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">ランドリー・掃除用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315095087_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">文房具</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4548718782666_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">アルバム</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4945247467604_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">本・BGM</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4548076281856_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">自転車</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549337668669_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">トラベル用品</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315892365_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">Found MUJI</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>食品</h2>
+                            <ul class="product-food">
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738359494_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">レトルト・調味料</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4547315554799_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">製菓材料</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002873851_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">菓子</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4549738968450_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">飲料</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/4550002787677_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">食の基本</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2>その他</h2>
+                            <ul class="product-other">
+                                <li style="background-image: url(https://img.muji.net/img/item/0280001008597_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">花・グリーン</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/0280001003843_95.jpg);">
+                                    <a href="#">
+                                        <span class="title">産地直送</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/store/camp/norikura_400.jpg);">
+                                    <a href="#">
+                                        <span class="title">キャンプ場</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/store/mujisupport/support_400.jpg);">
+                                    <a href="#">
+                                        <span class="title">MUJI SUPPORT</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/store/housevision/housevision_400.jpg);">
+                                    <a href="#">
+                                        <span class="title">MUJI HOUSE VISION</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/store/ie/kinoie_400.jpg);">
+                                    <a href="#">
+                                        <span class="title">家</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://www.muji.com/img/product_idee.jpg);">
+                                    <a href="#">
+                                        <span class="title">IDEE</span>
+                                    </a>
+                                </li>
+                                <li style="background-image: url(https://img.muji.net/img/item/donation_icon.png);">
+                                    <a href="#">
+                                        <span class="title">募金</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!--from MUJI-->
+                    <section class="product-feed"></section>
+
+                    <!--店铺情报-->
+                    <section class="shop-info"></section>
+
+                    <!--注意事项-->
+                    <section class="important-info">
+                        <header class="top-info-header">
+                            <div class="top-title">
+                                <h1>重要なお知らせ</h1>
+                                <div class="top-more">
+                                    <a href="#">全て見る</a>
+                                </div>
+                            </div>
+                        </header>
+                        <ul class="info-content">
+                            <li>
+                                <time>2018.09.14</time>
+                                <a href="#">「ミニどら焼き」回収についてのお詫びとお知らせ </a>
+                            </li>
+                            <li>
+                                <time>2018.06.29</time>
+                                <a href="#">「素材を生かしたパスタソース　海老と香味野菜のペペロンチーノ」回収についてのお詫びとお知らせ</a>
+                            </li>
+                            <li>
+                                <time>2018.04.25</time>
+                                <a href="#">「綿ポリエステル変り織ソファ用カバー」表記誤りに対する消費者庁の措置命令について</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </main>
+            </div>
+            <footer class="footer">
+            <nav class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="footer-nav-logo">
+                            <img src="https://img.muji.net/img/common/logo-muji.svg" width="128" height="20" alt="無印良品">
+                        </a>
+                    </li>
+                    <li class="footer-buttons">
+                        <ul>
+                            <li>
+                                <a href="https://twitter.com/Baganeko_qi">
+                                    <img src="https://img.muji.net/img/common/twitter-with-circle.svg" class="twitter" width="28" height="28" alt="Twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/qi.lin.9847867">
+                                    <img src="https://img.muji.net/img/common/facebook-with-circle.svg" class="facebook" width="28" height="28" alt="Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://img.muji.net/img/common/youtube-with-circle.svg" class="youtube" width="28" height="28" alt="Youtube">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://img.muji.net/img/common/instagram-with-circle.svg" class="instagram" width="28" height="28" alt="Instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a href="">店舗情報</a></li>
+                    <li><a href="">イベント</a></li>
+                    <li><a href="">くらしの良品研究所</a></li>
+                    <li><a href="">MUJI SUPPORT</a></li>
+                    <li><a href="">MUJI HOUSE VISION</a></li>
+                    <li><a href="">お問い合わせ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">無印良品の家</a></li>
+                    <li><a href="">Café&Meal MUJI</a></li>
+                    <li><a href="">キャンプ場</a></li>
+                    <li><a href="">Found MUJI</a></li>
+                    <li><a href="">MUJI BOOKS</a></li>
+                    <li><a href="">MUJI HOTEL</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">MUJI passport</a></li>
+                    <li><a href="">カタログ</a></li>
+                    <li><a href="">MUJI Card</a></li>
+                    <li><a href="">MUJI GIFT CARD</a></li>
+                    <li><a href="">法人のお客様へ</a></li>
+                    <li><a href="">Tax-free Services</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">ニュースリリース</a></li>
+                    <li><a href="">採用情報</a></li>
+                    <li><a href="">無印良品メッセージ</a></li>
+                    <li><a href="">無印良品について</a></li>
+                    <li><a href="">株式会社 良品計画</a></li>
+                </ul>
+            </nav>
+            <div class="footer-jyohou-copyright">
+                <ul>
+                    <li class="country">
+                        <a>
+                            <img src="https://www.muji.com/jp/img/flag_jp.png" alt>
+                            日本
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">個人情報の取り扱い</a>
+                    </li>
+                    <li>
+                        <a href="#">サイトマップ</a>
+                    </li>
+                </ul>
+                <p  class="footer-copyright">Copyright ©Ryohin Keikaku Co., Ltd.</p>
+            </div>
+        </footer>
+        </main>
+
+    </div>
+</div>
+
+
+<script src="jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

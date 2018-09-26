@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索框</title>
+</head>
+<body>
+
+    <input type="text" id="i1" value="kakaka" placeholder="伏山">
+    <input type="button" value="搜索">
+
+    <script>
+        var i1Ele = document.getElementById("i1");
+        i1Ele.onfocus = function (ev) {
+            this.value="";
+        };
+
+        i1Ele.onblur=function (ev) {
+            if (!this.value.trim()){
+                this.value="hahaha";
+            }
+        }
+    </script>
+
+</body>
+</html>

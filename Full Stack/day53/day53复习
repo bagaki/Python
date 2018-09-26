@@ -1,0 +1,76 @@
+补充：
+    Number
+    parseInt("111")
+    parseFloat("11.11")
+
+函数
+    函数的定义
+        function foo(a, b){}
+        匿名函数：
+            var bar = function(){...}
+        立即执行函数：
+            (function(a,b){...})(实参1, 实参2)
+    函数的参数：
+        不严谨（可传多，可传少，就是不报错）
+        arguments：函数内部可以通过arguments拿到所有的参数
+    作用域
+        函数内部可以调用函数外部的变量
+        函数外部无法访问函数内部的变量
+    词法分析
+        函数调用的一瞬间要做两部：
+            1.分析（AO对象）
+                先分析有没有参数
+                看看有没有局部变量
+                看看有没有函数声明
+
+            2.真正执行
+                取值都是从AO对象上找
+
+自定义对象
+    var p1 = {name:"", age:38};
+    var p2 = new Object();
+        p2.name = "";
+        p2.age = 38;
+
+    遍历自定义对象方式:
+        for (var i in p1){
+            console.log(i);
+            console.log(p1[i]);
+        }
+
+内置对象和方法
+    Date
+        生成对象
+            var d1 = new Date()
+            var d2 = new Date("2018-08-24")
+        方法
+            d1.toLocalString()
+            d1.toUTCString()
+            d1.getFullYear()
+            d1.getMonth()
+            d1.getDay()
+
+    JSON
+        字符串转json对象
+            var jsonObj = JSON.parse('')
+        JSON对象转成字符串
+            var s = JSON.stringify(jsonObj)
+
+    Math
+    RegExp
+        定义正则两种方式
+            var reObj1 = new RegExp("^[a-zA-Z][a-zA-Z0-9]{5,11}$");
+            var reObj2 = /^[a-zA-Z][a-zA-Z0-9]{5,11}$/
+
+        常用方法
+            reObj.test("将要被校验的字符串")
+        正则的匹配模式
+            g   全局
+            i   不区分大小写
+
+        几个坑
+            正则表达式之间不能加空格
+            .test()不传值相当于.test(undefined)
+            全年据匹配模式注意事项
+                var reObj = /Alex/g;
+                reObj.test("Alex")   --> lastIndex属性被设置成下一个4

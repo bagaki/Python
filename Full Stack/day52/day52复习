@@ -1,0 +1,52 @@
+JS基础语法
+    JS引入方式
+        直接在script标签里写
+        在单独的JS文件中写代码，然后通过script标签的src属性引入写好的JS文件
+    变量
+        var 变量名;  var 变量名 = 值
+        变量的命名 字母 数字 下划线和$组成
+        使用驼峰
+    数据类型
+        数字   Number
+            NaN
+            数字类型的常用方法
+        字符串 String
+            字符串的常用方法
+        布尔值 Boolean
+        数组   Array
+            常用方法
+        null
+        undefined
+
+    条件判断
+        if else
+        if; else if; else;
+        switch(值){
+            case 1:
+            console.log();
+            break;
+            case2:
+            ...
+
+            default:
+            console.log(上面case都不满足就执行这句)
+        }
+
+    循环
+        for循环
+            for (var i = 0; i < 值; i++){
+                console.log(i);
+            }
+        while循环
+            var i = 5;
+            while (i > 0){
+                console.log(i);
+                i--;
+            }
+
+    运算符
+        算数运算符
+            + - * / % ++ --
+        比较运算符
+        逻辑运算符
+        赋值运算符

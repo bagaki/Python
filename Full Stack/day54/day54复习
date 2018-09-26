@@ -1,0 +1,100 @@
+1.BOM
+    location相关
+        location.href
+        location.href="http://www.sogo.com"
+        location.reload()
+
+2.DOM
+    1.DOM树的概念
+
+    2.JS通过DOM操作HTML
+        改标签（标签的内容）
+        改标签的属性
+        改样式
+        事件相关
+
+    3.操作标签
+	    JS查找标签
+	        直接查找
+	            通过ID     document.getElementById()
+	            通过class  document.getElementsByClassName()
+	            通过标签名 document.getElementsByTagName()
+
+	        间接查找
+	            找父标签
+	            找子标签门
+	            找第一个子标签
+	            找最后一个子标签
+	            找上一个兄弟标签
+	            找下一个兄弟标签
+
+	    创建标签
+	        语法
+	            document.createElement("")
+
+	    添加标签
+	        在内部最后添加
+	            父标签.appendChild(新创建的标签)
+	        在内部指定标签前面添加
+	            父标签.insertBefore(新创建的标签, 指定标签)
+
+	    删除节点
+	        从父标签里面删除指定的标签
+	            父标签.removeChile(指定的标签)
+
+	    替换
+	        在父标签里面用新创建的标签替换指定标签
+	            父标签.replaceChild(新创建的标签, 指定标签)
+
+	4.操作标签的属性
+	    常用的属性
+	        innerHTML -->  全部（子标签及子标签的文本内容）
+	        innerText -->  标签（子标签）的文本内容
+
+	    标签自带的属性
+	        divEle.setAttribute("age","18")  -->  设置属性
+	        divEle.getAttribute("age")       -->  获取属性的值
+	        divEle.removeAttribute("age")    -->  删除指定的属性
+
+	        对于标签默认的属性
+	            a标签内.href/img标签.src
+	            a标签.href="https://google.com"/img标签.src="..."
+
+	5.获取值（input/select/textarea）
+	    input标签.value()
+	    select标签.value()
+	    textarea标签.value()
+
+	6.操作标签的样式
+	    通过class名改变样式
+	        获取标签所有样式类
+	            .className           -->  得到的是字符串
+	            .classList           -->  得到的是数组
+
+	        使用classList操作样式
+	              .classList.contains("样式类")  -->  判断包不包含指定的样式类
+	              .classList.add("")             -->  添加指定样式类
+	              .classList.remove("")          -->  删除指定样式类
+	              .classList.toggle("")          -->  有就删除，没有就添加
+
+	    通过.style直接修改CSS属性
+	        CSS属性中带中横线的
+	            background-color:red;
+	            .style.backgroundColor=green;
+	        CSS属性中不带中横线的
+	            .style.color=red;
+
+	事件相关
+	    注意：
+	        涉及到DOM操作的JS代码要放在body标签的最下面
+	    绑定事件的方式
+	        在标签内通过属性来设置(onclick=foo(this){})
+	            this指的是当前触发事件的标签
+	    常用的事件
+	        onclick
+	        ondbclick
+
+	        onfocus
+	        onblur
+
+	        onchange  域的内容被改变（select联动）

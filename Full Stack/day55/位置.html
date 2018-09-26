@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位置</title>
+    <!--<link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" rel="stylesheet">-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .c1,
+        .c2,
+        .c3{
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+        }
+        .c2{
+            position: relative;
+            left: 200px;
+            top: 200px;
+            background-color: hotpink;
+        }
+        .c3{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="c1">div</div>
+    <div class="c2">
+        <div class="c3">c3</div>
+    </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+
+    </script>
+
+</body>
+</html>

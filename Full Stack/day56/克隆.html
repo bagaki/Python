@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>克隆</title>
+</head>
+<body>
+
+    <button class="b1">大家好，我是渣渣辉</button>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(".b1").click(function () {
+        $(this).clone(true).insertAfter(this);
+    });
+</script>
+</body>
+</html>

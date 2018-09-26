@@ -1,0 +1,87 @@
+1.BOM  browser object model
+    1.location
+        1.location.href --> 获取当前的URL
+        2.location.href = "网址"   跳转到改页面
+
+    2.警告框
+        alert("")
+        confirm()
+        prompt()  有返回值
+
+    3.计时
+        var t = setTimeout("JS语句", 毫秒)
+        var t = setTimeout("alert(123);", 5000)
+
+        清除计时器
+        clearTimeout
+
+    4.setInterval和clearInterval
+        每个多少毫秒执行
+
+
+2.DOM
+    1.什么是DOM树
+    2.DOM都有哪些内容
+    3.JS操作DOM
+        找标签
+            基本查找
+                根据ID找标签（有且只能找到一个）
+                    document.getElementById(ID值)
+                根据class名字找（找到的可以是多个）
+                    document.getElemetsByClassName（class 值）
+                根据标签名找（找到的可以是多个）
+                    document.getEleementByRagName('biaoqianminn ')
+
+            间接查找
+                找父标签
+                    document.parentElement
+
+                找子标签（找到的可能事故多少）
+                    document.children
+                第一个子标签
+                最后一个子标签
+                前一个兄弟标签
+                后一个兄弟变迁
+
+        创建标签
+            createElement("标签名")
+
+        添加标签
+            在内部的最后添加
+                appendChild("标签名")
+            在内部的某个标签的前面插入
+                insertBefore(要插入的新标签，哪个标签之前)
+
+        属性（内置属性）：
+            .属性名 = "属性值"
+
+            自定义的属性作用
+                .setAttribute("s9","hao")
+                .getAttribute("s9")
+                .removeAttribute("s9")
+
+        文本操作
+            设置文本的内容
+                .innerText
+                .innerText="kakaka"
+            设置标签内容
+                .innerHTML="<p>我是p标签</p>"
+            获取值的区别
+                .innerHTML  -->  子标签和子标签之间的内容都取出来
+                .innerText  -->  只获取标签之间的文本内容
+
+        样式操作
+
+        事件
+            常用事件
+                onclick
+                ondbclick
+
+                onfocus
+                onblur
+
+                onchange
+
+            绑定事件的方式
+                在标签里直接写属性（onclick=foo()）
+                通过JS给标签绑定事件

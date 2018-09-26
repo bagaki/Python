@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>替换</title>
+</head>
+<body>
+
+    <p>
+        <a href="https://www.google.com">aaa</a>
+        <a href="">bbb</a>
+    </p>
+
+    <button id="b1">change</button>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $("#b1").click(function () {
+        // 创建一个img标签
+        var imgEle = document.createElement("img");
+        $(imgEle).attr("src", "http://pic.pimg.tw/sm07240122/1409725384-3199265981.gif");
+        // $("a").replaceWith(imgEle);
+        $(imgEle).replaceAll("a");
+    });
+
+
+</script>
+</body>
+</html>

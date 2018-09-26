@@ -1,0 +1,99 @@
+1.内容回顾
+    1.伪类和伪元素
+        1.伪类
+            :link
+            :visited
+            :hover
+            :active
+            :focus
+        2.伪元素
+            :first-letter
+            :before
+            :after
+
+    2.css属性
+        1.字体
+            font-family
+            font-size
+            font-weight
+        2.文本属性
+            text-align
+            text-decoration
+            text-ident 首行缩进
+        3.背景属性
+            background-color
+            background-image
+        4.颜色
+            red
+            #fff
+            rgb()  rgba()
+        5.边框属性border
+            border-width
+            border
+            border-color
+        6.css盒子模型
+            content
+            padding
+            margin
+        7.display
+            inline
+            block
+            inline-block
+            none
+        8.float
+            1.多用于实现布局效果
+                1.顶部的导航条
+                2.页面左右分栏
+            2.float
+                1.任何标签都可以浮动，浮动之后都会变成块级
+            3.float取值
+                left
+                right
+                none
+        9.clear 清除浮动-->清除浮动的副作用（内容溢出，父标签撑不起来）
+            1.结合伪元素来实现
+                clearfix:after{
+                    content:"",
+                    display:"block",
+                    clear: both;
+                }
+            2.clear取值
+                left
+                right
+                both
+        10.overflow
+            1.标签内容溢出
+            2.取值
+                hidden
+                scroll
+                auto
+                scroll-x
+                scroll-y
+            例子：
+                圆形头像的例子
+                    overflow:hidden;
+                    border-radius:50%;
+        11.定位：position
+            static
+            relative
+            absolute
+            fixed
+
+            脱离文档流的三种方式
+                float
+                absolute
+                fixed
+        12.opacity（不透明度）
+            0~1
+            可以改变元素和子元素的透明度
+            rgba()只改变背景颜色的透明度
+        13.z-index
+            数值越大越靠近你
+            只能作用于定位过的元素
+            自定义的模态框
+
+
+2.CSS补充
+
+
+3.作业（小米）

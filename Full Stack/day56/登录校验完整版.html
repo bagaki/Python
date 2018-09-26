@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录校验完整版</title>
+    <style>
+        .error{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="d1">
+        <p><span>span</span></p>
+        <div>div</div>
+    </div>
+
+    <form action="" id="f1">
+        <p>
+            <label for="">Username:
+                <input class="need" name="username" type="text">
+                <span class="error"></span>
+            </label>
+        </p>
+        <p>
+            <label for="">Password:
+                <input class="need" name="pwd" type="password">
+                <span class="error"></span>
+            </label>
+        </p>
+        <p>Hobby
+            <label for="">Basketball:
+                <input name="hobby" type="checkbox" value="basketball">
+            </label>
+            <label for="">Footbal:
+                <input name="hobby" type="checkbox" value="Footbal">
+            </label>
+            <label for="">Double Color Ball:
+                <input name="hobby" type="checkbox" value="Double">
+            </label>
+        </p>
+        <p>Gender
+            <label for="">Male:
+                <input name="gender" type="radio" value="1">
+            </label>
+            <label for="">Female:
+                <input name="gender" type="radio" value="0">
+            </label>
+            <label for="">Secret:
+                <input name="gender" type="radio" value="2">
+            </label>
+        </p>
+        <p>
+            <label for="s1">Where from?</label>
+            <select name="from" id="s1" multiple>
+                <option value="010">北京</option>
+                <option value="021">上海</option>
+                <option value="020">广州</option>
+            </select>
+        </p>
+        <p>
+            <label for="t1">Myself</label>
+            <textarea name="memo" id="t1" cols="30" rows="10">
+
+            </textarea>
+        </p>
+        <p>
+            <input id="b1" type="submit" value="Sigin">
+            <!--<button id="cancel">取消</button>-->
+            <input type="button" value="取消">
+        </p>
+    </form>
+<script src="jquery-3.3.1.min.js"></script>
+
+<script>
+    // 点击登录，验证用户名和密码为不为空
+    // 为空就在对应得input标签下面下实一个错误提示是信息
+
+    // 1.给登录按钮绑定点击事件
+    // 2.点击事件要做得shi
+    // 3.找到input标签  --> 取值 --> 判断不为空(trim) --> .length为不为空
+    // 4.如果不为空，则什么都不做
+    // 5.如果为空，要做几件事儿
+    // 6.在当前这个input标签下面，添加一个新得标签，内容为xx不能为空
+
+    $("#b1").click(function () {
+        var $needEles = $(".need");
+        // 定义一个标志位
+        var flag  = true;
+        for (var i=0; i<$needEles.length; i++){
+            // 如果有错误
+            if ($($needEles[i]).val().trim().length === 0){
+                var labelName = $($needEles[i]).parent().text().trim().slice(0,-1);
+                $($needEles[i]).next().text(labelName + "不能为空！");
+                // 将标志位置为false
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    })
+</script>
+</body>
+</html>

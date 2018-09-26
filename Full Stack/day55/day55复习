@@ -1,0 +1,68 @@
+1.jQuery
+    1.选择器  $("")
+        1.基本选择器
+            1.ID      -->$("#d1")
+            2.标签名  -->$("p")
+            3.class名 -->$(".c1")
+            4.通用的  -->$("*")
+            5.组合    -->$(".c1,div,a")
+
+        2.层级选择器
+            1.子孙        -->$("x y")
+            2.儿子选择器  -->$("x>y")
+            3.弟弟选择器  -->$("x~y")
+            4.毗邻选择器  -->$("label+input")
+
+        2.筛选器
+            1.基本筛选器
+                :first
+                :last
+                :eq()    --> 从0开始
+                :even
+                :odd
+
+                :not  -->  $("div:not(.c1)")
+                :has  -->  $("div:has(.c1)")
+
+            2.属性选择器
+                1.$("[title]")
+                2.$("[type='text']")
+                3.$("[type!='text']")
+
+            3.表单选择器
+                1.$(":checkbox")  -->  $("input[type='checkbox']")
+                2.$(":text")
+                ...
+
+            4.表单对象
+                1.$(":disabled")  -->  找到不可用的标签
+                ...
+
+            5.筛选器方法(应用场景只是和上面的基本筛选器不同而已)
+                1.$("div").first()
+                ...
+
+            6.常用的方法 （必须要会）
+                1..next()
+                2..nectAll()
+                3..nextUntil()  --> 往下找，直到找到终止条件为止
+
+                4..prev()
+                5..prevAll()
+                6..prevUntil()
+
+                7..siblings()  --> 找所有的兄弟，前面和后面
+                8..children()
+
+                9..parent()
+                10..parents()
+                11.parentsUntil()
+
+                12..find(各种条件都可以)
+
+        3.样式操作
+            1.操作class类
+                1..addClass()
+                2..removeClass()
+                3..hasClass()
+                4..toggleClass()

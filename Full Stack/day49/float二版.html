@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二版</title>
+    <style>
+        #d1{
+            border: 1px solid blueviolet;
+        }
+        .c1, .c2, .c3{
+            height: 50px;
+            width: 50px;
+            background-color: cadetblue;
+            border: 1px solid salmon;
+            float: left;
+        }
+        .c4{
+            /*height: 50px;*/
+            clear: left;
+            background-color: bisque;
+        }
+        .c5{
+            height: 200px;
+            background-color: coral;
+        }
+
+        /*清除浮动的副作用*/
+        .clearfix:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="d1" class="clearfix">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </div>
+
+    <div class="c5">just do it</div>
+
+</body>
+</html>

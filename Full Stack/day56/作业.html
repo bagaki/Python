@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+    <style>
+        .cover {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 998;
+        }
+
+        .modal {
+            height: 400px;
+            width: 600px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -300px;
+            margin-top: -200px;
+            z-index: 1000;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<button id="add">新增</button>
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Hobby</th>
+        <th>Second</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>tomoya</td>
+        <td>singer</td>
+        <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>taiichi</td>
+        <td>Player</td>
+        <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Mabo</td>
+        <td>Drummer</td>
+        <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Ani</td>
+        <td>Bases</td>
+        <td>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+<div id="myCover" class="cover hide"></div>
+<div id="myModal" class="modal hide">
+    <form action="">
+        <p>
+            <label for="modal-name">Username:
+                <input type="text" id="modal-name">
+            </label>
+        </p>
+        <p>
+            <label for="modal-hobby">Hobby:
+                <input type="text" id="modal-hobby">
+            </label>
+        </p>
+        <p>
+            <button id="modal-submit">Add</button>
+            <button id="modal-cancel">Cancel</button>
+        </p>
+    </form>
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+
+    // 定义一个弹出模态框的函数
+    function showModal() {
+        $("#myCover, #myModal").removeClass("hide");
+    }
+
+    // 定义一个关闭模态框的函数
+    function closeModal() {
+        $("#myModal").find("input").val("");
+        $("#myCover, #myModal").addClass("hide");
+    }
+
+    $("#add").on("click", function () {
+        // 把模态框弹出
+        // $(".cover").removeClass("hide");  //显示背景
+        // $(".modal").removeClass("hide");  // 显示模态框
+        showModal();
+    });
+
+    // 模态框中取消按钮绑定事件
+    $("#modal-cancel").on("click", function () {
+        // 2.隐藏模态框
+        // $(".cover").addClass("hide");
+        // $(".modal").addClass("hide");
+        closeModal();
+    });
+
+    // 模态框中的提交按钮绑定事件
+    $("#modal-submit").on("click", function () {
+        // 1.取到用户填写的input框的值（data）
+        var name = $("#modal-name").val();  // 把用户再模态框里输入的姓名获取到，保存到name变量中
+        var hobby = $("#modal-hobby").val();
+
+        var $myModalEle = $("#myModal");
+        // 判断，按需操作
+        var $currentTrEle = $myModalEle.data("currentTr");
+        if ($currentTrEle !== undefined){
+            $currentTrEle.children().eq(1).text();
+            $currentTrEle.children().eq(2).text();
+
+            // 清空之前保存的当前行
+            $myModalEle.removeData()
+        } else{
+            // 创建tr标签把数据填进去
+            var trEle = document.createElement("tr");
+            var number = $("tr").length;
+            $(trEle).html("<td>" + number + "</td>" + "<td>" + name + "</td>" + "<td>" + hobby + "</td>" + "<td><button class='edit'>Edit</button> <button class='delete'>Delete</button></td>");
+
+            // 把创建好的tr添加到tbody中
+            $("tbody").append(trEle);
+            // 隐藏模态框
+            closeModal();
+        }
+
+    });
+
+    // 2.根据是编辑 还是新增 做不同的操作
+    // 2.1 如果是新增操作，就生成一条新的tr，加到table的最后
+    // 2.2 如果是编辑操作，根据先前编辑按钮那一行
+    // 难点在于 如何确定 编辑的是哪一行? -->  利用data()可以存具体的jQuery对象
+
+    // 给每一行的编辑按钮绑定事件
+    // 要使用事件委托，基于已经存在的元素（页面加载完之后存在的标签）绑定事件
+    var $tbody = $("tbody");
+    $tbody.on("click", ".edit", function () {
+        showModal();
+        // 把原来的数据填写到模态框中的input
+        var $currentTrEle = $(this).parent().parent();
+
+        // 把当前行的jQuery对象保存起来
+        $("#myModal").data("currentTr", $currentTrEle);
+
+        var name = $currentTrEle.children().eq(1).text();
+        var hobby = $currentTrEle.children().eq(2).text();
+
+        // 填
+        $("#modal-name").val(name);
+        $("#modal-hobby").val(hobby);
+    });
+    // 给每一行的删除按钮绑定事件
+    $tbody.on("click", ".delete", function () {
+        var $currentTrEle = $(this).parent().parent();
+
+        // 更新序号
+        $currentTrEle.nextAll().each(function () {
+            var oldNum = $(this).children().first().text();
+            $(this).children().first().text(oldNum - 1);
+        });
+        $currentTrEle.remove();
+    });
+</script>
+</body>
+</html>

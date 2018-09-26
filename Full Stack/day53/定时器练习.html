@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器练习</title>
+</head>
+<body>
+
+    <label for="i1"></label><input id="i1" type="text">
+    <input id="start" type="button" value="开始">
+    <input id="stop" type="button" value="结束">
+    <script>
+        // 在input框里显示当前事件
+        // 获取当前的事件
+        // var now = new Date();
+        // var nowStr = now.toLocaleString();
+
+        // 声明一个全局的t，保存定时器的ID
+        var t;
+        // // 把时间字符串填到input矿质;
+        // var ilEle = document.getElementById("i1");
+        // ilEle.value = nowStr;
+        function foo() {
+            var now = new Date();
+            var nowStr = now.toLocaleString();
+            var i1Ele = document.getElementById("i1");
+            i1Ele.value = nowStr;
+        }
+
+        //点开始然时间动起来
+        // 找到开始按钮，给它绑定事件
+        var startButton = document.getElementById("start");
+        startButton.onclick=function () {
+            foo();
+            // 每隔一秒执行foo
+            // var t = setInterval(foo, 1000);
+            if (t===undefined){
+                t = setInterval(foo, 100);
+            }
+        };
+
+        //点停止
+        // 找到停止按钮，给它绑定事件
+        var stopButton = document.getElementById("stop");
+        stopButton.onclick=function () {
+            // 清除之前设置的定时器
+            clearInterval(t);
+            console.log(t);
+            t = undefined;
+        }
+
+    </script>
+
+</body>
+</html>

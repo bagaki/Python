@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class相关</title>
+    <style>
+        .c1{
+            height:200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: #666666;
+        }
+        .c2{
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="c1 c2 c3" onclick="change(this);">c1</div>
+
+<script>
+    function change(ths) {
+        ths.classList.toggle("c2");
+    }
+
+    var divEles = document.getElementById("div");
+    for (var i=0; i<dicEles.length; i++){
+        divEles[i].onclick=function () {
+            this.classList.toggle("c2")
+        }
+    }
+</script>
+
+</body>
+</html>

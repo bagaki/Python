@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式操作</title>
+    <style>
+        .c1{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: hotpink;
+        }
+        .c2{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="c1"></div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        // 找标签
+        $("div.c1").click(function() {
+            console.log(this);  // this是DOM对象
+            $(this).toggleClass("c2");
+
+        })
+    </script>
+</body>
+</html>

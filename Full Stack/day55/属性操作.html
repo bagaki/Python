@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+</head>
+<body>
+
+    <img src="https://static.appledaily.hk/images/e-paper/20160519/large/1463635257_cda4.jpg" alt="tomoya">
+    <input type="button" id="b1" value="Next">
+
+    <label>
+        <input type="checkbox" id="c1">
+    </label>
+    <label>
+        <input type="checkbox" id="c2">
+    </label>
+
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        var oldURL;
+        var newURL = "http://pic.pimg.tw/sm07240122/1409725384-3199265981.gif";
+        $("#b1").click(function () {
+            // 修改img标签得src属性
+            var $imgEles = $("img");
+            oldURL = $imgEles.attr("src");
+            $imgEles.attr("src", newURL);
+            newURL = oldURL;
+        });
+
+
+    </script>
+</body>
+</html>

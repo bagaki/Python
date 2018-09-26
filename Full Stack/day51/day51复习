@@ -1,0 +1,57 @@
+1.HTML
+    1.标签
+        标签分类
+            块级标签
+            内联标签
+        常用标签
+            a table p div h1~h6 span ul ol dl
+            form 表单系列
+                input
+                    text
+                    password
+                    date datetime
+                    email
+                    radio
+                    checkbox
+
+                    button/submit/resset
+
+                    file
+
+                select(下拉框)
+                    multuple 多选
+                    分组的select
+                        select
+                            optgroup label="分组名"
+                                option
+
+                textarea
+
+2.CSS
+    选择器
+        基本选择器
+            元素 ID 类  通用
+        组合选择器
+            后代（空格）  儿子  毗邻  弟弟
+        属性（input[type="text"]）
+        分组和嵌套
+        伪类和伪元素
+
+        选择器的优先级
+            选择器相同时，就近原则
+            权重的计算
+
+
+    CSS属性
+        字体属性
+        文本属性
+        边框
+        背景
+        盒子模型（内容（content）padding margin）
+        display(显示) --> block  inline  inline-block  none
+        overflow  -->  hidden  scroll  auto  overflow-x/overflow-y
+        float
+        position --.>  相对relative  绝对absolute  固定fixed
+        clear
+        z-index
+        opacity

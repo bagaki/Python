@@ -1,0 +1,56 @@
+1.文档操作
+    1..prepend()  -->  向文件中最前面添加标签
+        var liEle = document.createElement("li");
+        liEle.innerText = 0;
+        $("#u1").prepend(liEle)
+    2.prependTo()  -->  与prepend()添加方向相反
+        var liEle = document.createElement("li");
+        liEle.innerText = 5;
+        $(liEle).appendTo($("#u1"))
+
+    3..before()
+        var liEle = document.createElement("li");
+        liEle.innerText = "1.5";
+        $("#l1").before(liEle);
+    4..after()
+        var liEle = document.createElement("li");
+        iEle.innerText = "0.5";
+        $("#l1").after(liEle);
+
+    5.remove()  -->  从DOM中删除所有匹配的元素
+                    文档操作示例，ul都一起删除
+    6.empty()   -->  删除匹配的元素集合中所有的子节点
+                    文档操作示例，只是清空ul里的li
+
+    7.replaceWith()
+    8.replaceAll()
+    9.clone()
+
+2.事件（画重点）
+    1.目前为止学过的绑定事件的方式
+        1.在标签里写 onclick=foo(this);
+        2.原生DOM的JS绑定 DOM对象.onclick=function(){}
+        3.jQuery版的绑定事件   jQuery对象.click(function(){})
+
+    2.jQuery绑定事件（必记）
+        .on("click", function(){...})
+
+        .on("click", "选择器", function(){...})
+        适用于 给未来的元素（页面生成的时候还没有的标签） 绑定事件（事件委托）
+
+        事件冒泡和事件捕获
+
+    3.事件之间
+        1.阻止后续事件的执行
+            return false;  显式的写
+        2.for循环，退出当前循环 --> 用break;
+
+    4.补充一个键盘事件
+        示例：批量操作的
+
+    5.DOM加载完之后执行
+        $(document).ready(function(){
+            // 写绑定事件的具体操作
+        })
+
+    6.

@@ -1,0 +1,58 @@
+1.样式操作
+    1.操作class
+    2.操作CSS属性的
+        .css("color")
+        .css("color","red")
+        .css({"color":"yellow", "border":"1px solid black})
+
+2.位置相关
+    1.offset()
+    2..position() --> 相对于定位的父标签的偏移
+
+    3..scrollTop()  -->  返回顶部
+        $(window).scroll(function(){
+            ...
+            // 判断窗口距离top有多少
+            if ($(window).scrollTop()>100){
+                // 把返回顶部的按钮显示出来，removeClass("hide");
+            }
+        });
+
+        // 返回顶部的按钮，要做的事
+        $("返回顶部按钮").click(function(){
+            // $(window).scrollTop(0);
+        })
+
+    4..scrollLeft()
+
+3.尺寸
+    1.height
+    2.width
+
+    3.innerHeight
+    4.innerWidth
+
+    5.outerHeight
+    6.outerWidth
+
+4.文本操作
+    1.html()  -->  子标签和文本内容
+        .html("<a href=""></a>")
+    2.text()  -->  所有的文本内容
+
+    3.val()
+        获取用户输入的值
+        $(":text").val()
+        $(":checked").val()  -->  默认返回的都是第一个标签的值
+
+        $("#s1").val()  -->  select可以直接取选中的值，多选的select返回的是数组格式
+
+        $("#t1").val()  -->  textarea和input:text类似
+
+5.属性操作
+    1..attr()  -->  $("a").attr("href")
+                    $("a").attr("href", "网站")
+                    $("a").attr({"href", "网站", "title":"aaa"})
+
+    2..prop()  -->  适用于checkbox和radio(返回true或false的属性)
+

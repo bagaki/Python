@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style>
+        #d1{
+            border: 1px solid cadetblue;
+        }
+        .c1,
+        .c2{
+            float: left;
+            height: 100px;
+        }
+        .c3{
+            /*height: 100px;*/
+            clear: left;
+        }
+        #d1:after{
+            content: "";
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+
+<div id="d1">
+    <div class="c1">c1</div>
+    <div class="c2">c2</div>
+    <div class="c3">c3</div>
+</div>
+
+
+</body>
+</html>

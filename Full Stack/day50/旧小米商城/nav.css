@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.nav-left li{
+    float: left;
+    padding-right: 20px;
+}
+
+.nav-right{
+    float: right;
+}
+
+.nav{
+    background-color: #666666;
+    padding: 15px 0;
+}
+
+.c1{
+    clear: left;
+}
+
+.clearfix:after,
+.clearfix:before{
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.s9{
+    width: 80%;
+    margin: 0 auto;
+}

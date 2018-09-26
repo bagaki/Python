@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素选择器</title>
+    <style>
+        p:first-letter{
+            font-size: 48px;
+            color: blueviolet;
+        }
+
+        .c1:before{
+            content: '*';
+            color: darksalmon;
+        }
+
+        .c1:after{
+            content: '[?]';
+            color: cornflowerblue;
+        }
+        p{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>I'm sleep now.I'm sleep now.I'm sleep now.I'm sleep now.I'm sleep now.I'm sleep now</p>
+
+    <p class="c1">I'm sleep now</p>
+    <p class="c1">I'm sleep now</p>
+    <p class="c1">I'm sleep now</p>
+
+</body>
+</html>

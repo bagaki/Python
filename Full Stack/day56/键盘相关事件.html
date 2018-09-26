@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘相关事件</title>
+</head>
+<body>
+
+    <table border="1px" id="t1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Hobby</th>
+            <th>Second</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>tomoya</td>
+            <td>singer</td>
+            <td>
+                <select>
+                    <option value="0">下线</option>
+                    <option value="1">上线</option>
+                    <option value="2">离线</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>taiichi</td>
+            <td>Player</td>
+            <td>
+                <select>
+                    <option value="0">下线</option>
+                    <option value="1">上线</option>
+                    <option value="2">离线</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Mabo</td>
+            <td>Drummer</td>
+            <td>
+                <select>
+                    <option value="0">下线</option>
+                    <option value="1">上线</option>
+                    <option value="2">离线</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Ani</td>
+            <td>Bases</td>
+            <td>
+                <select>
+                    <option value="0">下线</option>
+                    <option value="1">上线</option>
+                    <option value="2">离线</option>
+                </select>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    var mode = false;
+    var $bodyEle = $("body");
+    // 给文档绑定，监听键盘按键被按下的事件
+    $bodyEle.on("keydown", function(event){
+        //
+        console.log(event.keyCode);
+        if (event.keyCode === 17){
+            // 进入批量操作模式
+            mode = true;
+        }
+    });
+
+    // 按键抬起来的时候，退出批量操作模式
+    $bodyEle.on("keyup", function(event){
+        //
+        console.log(event.keyCode);
+        if (event.keyCode === 17){
+            // 进入批量操作模式
+            mode = false;
+        }
+    });
+
+    $("select").on("change", function () {
+        var value = $(this).val();
+        var $thisCheckbox = $(this).parent().siblings().first().find(":checkbox");
+        console.log($thisCheckbox[0]);
+
+        // 判断checkbox有没有被选中
+        if ($thisCheckbox.prop("checked") && mode){
+            // 真正进入批量操作模式
+            var $checkedEles = $("input[type='checkbox']:checked");
+            for (var i=0; i<$checkedEles.length; i++){
+                // 找到同一行的select
+                $($checkedEles[i]).parent().siblings().last().find("select").val(value);
+            }
+        }
+    });
+</script>
+</body>
+</html>

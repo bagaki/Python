@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击在表格最后添加一条记录</title>
+</head>
+<body>
+
+    <table border="1px" id="t1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Hobby</th>
+            <th>Second</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>tomoya</td>
+            <td>singer</td>
+            <td><button class="delete">Delete</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>taiichi</td>
+            <td>Player</td>
+            <td><button class="delete">Delete</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Mabo</td>
+            <td>Drummer</td>
+            <td><button class="delete">Delete</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ani</td>
+            <td>Bases</td>
+            <td><button class="delete">Delete</button></td>
+        </tr>
+
+        </tbody>
+    </table>
+    
+    <button id="b1">添加一行数据</button>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    // 绑定事件
+    $("#b1").click(function () {
+        // 生成要添加的tr标签及数据
+        var trEle = document.createElement("tr");
+        $(trEle).html("<td>5</td><td>shigero</td><td>Guitar</td><td><button class='delete'>Delete</button></td>");
+
+         // 把生成的tr插入到表格中
+        $("#t1 ").find("tbody").append(trEle)
+    });
+    
+    // 删除按钮绑定事件
+    $(".delete").click(function () {
+        $(this).parent().parent().remove();
+    });
+
+</script>
+</body>
+</html>

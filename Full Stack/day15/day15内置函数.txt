@@ -1,0 +1,127 @@
+作用域相关（2）：locals()
+                globals()
+
+迭代器/生成器相关（3）：range
+                      next
+                      iter
+	迭代器.__next__()
+	next(迭代器)
+	def next(diedaiqi):
+		diedaiqi.__next__()
+
+	迭代器 = iter(可迭代对象)
+	迭代器 = 可迭代对象.__iter__()
+
+	range可迭代对象
+	range(10)
+	range(1, 11)
+	range(1, 11, 2)
+
+其他
+
+    查看内置属性：dir：查看一个变量拥有的方法
+        print(dir([]))
+        print(dir({}))
+
+    调用相关：callable
+        print(callable(print))  # True
+        a = 1
+        print(callable(a))      # False
+        print(callable(globals))# True
+        def func():pass
+        print(callable(func))    # True
+
+    帮助：help:比dir更详细的帮助
+        help(str)
+
+    模块相关：import 
+        __import__()
+        print()
+
+        import time
+        # 等于以下
+        time = __import__('time')
+        print(time.time())
+
+    # 某个方法属于某个数据类型的变量，就用.调用
+	# 如果某个方法不依赖于任何数据类型，就直接调用--内置函数，自定义函数
+	l = [1,2,3,4]   # l 列表句柄
+	l.append()
+
+	文件操作相关：open()
+	    f = open()
+	    f.read()
+
+	    f = open('day15fuxi.py')
+	    print(f.writable())
+	    print(f.readable())
+
+	内存相关：id 和 hash
+	    id()内存地址
+	    hash：hash值，对于相同可以hash的数据的hash值在一次程序的执行过程中总是不变的
+	          字典的寻址方式
+	        print(hash(12345))      # hashable
+	        print(hash('1', 'aaa')) # hashable
+	        print(hash('ashdshi'))  # hashable
+	        print(hash([]))         # unhashable
+
+	输入输出：input() 和 print()
+	     print('kakaka\n', end='')  # end是默认参数值，指定输出的结束符
+	     print(1,2,3,4,5, sep='|')  # sep是指定输出多个值之间的分隔符
+	     f = open('file', 'w')
+	     print('aaaa', file=f)
+	     f.close()
+
+	     # 打印进度条  progress Bar
+	     import time
+	     for i in range(0 ,101, 2):
+	     	time.sleep(0.1)
+	     	char_num = i//2   # 打印多少个'*'
+	     	per_str = '\r%s%% : %s\n' % (i, '*' * char_num) if i == 100 else '\r%s%% : %s' % (i, '*'*char_num)
+	     	print(per_str, end='', flush=True)
+
+	字符串类型代码的执行
+	    eval
+	    	eval('print(123)')   # 123
+	    	eval('1+2+3')        # 6
+	    exec
+	        exec('print(123)')   # 123
+	        exec('1+2+3')        # none
+
+	    # exec和eval都可以执行字符串类型的代码
+	    # eval有返回值   ---  处理有结果的简单计算
+	    # exec没有返回值  --- 处理简单流程控制
+	    # eval只能用在你明确知道你要执行的代码是什么
+	    code = '''for i in range(10):
+	    	    	    	    	print(i*'i')'''
+	    print(code)
+
+	    compile：同一段代码多次执行
+
+
+基础数据类型相关
+    和数字相关
+        数据类型
+            bool, int, float, complex
+
+            复数 --- complex  ---  复合的数 -- 5 + 12j
+
+        进制转换
+            bin：二进制 -- 0b
+            oct：八进制 -- 0o
+            hex：十六进制 -- 0x
+        数学运算
+            abs, divmod(除余，分页用), round（精准数，精确小数点后几位）, pow, sum（必须可迭代的）, min（可接收可迭代，可接收多个参数，且可以指定key，key是函数名）, max
+    
+    和数据结构相关
+        序列
+            列表和元组：list和tuple,数据类强制转换时，区别，可变和不可变
+            相关内置函数：reversed()  slice()
+            字符串：str  format  bytes：转换成bytes类型  bytearray  memoryview  ord（字符按找unicode转数字）  chr（数字按照unicode转字符）ascii(只要时ascii码中的内容，就打印出来，不是就转换成'\u')  
+                   repr(用于%r格式化输出)
+        数据集合：
+            字典：dict  set
+            集合：set frozenset
+        相关内置函数：
+            len  enumerate(枚举)  all（接收可迭代） any（接收可迭代） 
+            重要几个：zip(拉链)  filter  map  sorted

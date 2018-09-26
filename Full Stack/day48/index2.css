@@ -1,0 +1,10 @@
+/*属性选择器*/
+
+
+[s9] {
+    color: pink;
+}
+
+[s9="hao"] {
+    color: greenyellow;
+}

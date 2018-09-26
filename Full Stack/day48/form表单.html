@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单示例</title>
+</head>
+<body>
+    <!--注册示例-->
+    <form action="http://127.0.0.1:8080/loadup/" method="get" enctype="multipart/form-data">
+        <p>Name:
+            <input type="text">
+        </p>
+        <p>Password:
+            <input type="password">
+        </p>
+        <p>Email:
+            <input type="email">
+        </p>
+        <p>
+            性别：
+            <input name="gender" type="radio">男
+            <input name="gender" type="radio">女
+        </p>
+        <p>爱好：
+            <input name="hobby" type="checkbox" value="basketball">篮球
+            <input name="hobby" type="checkbox" value="fotball">足球
+            <input name="hobby" type="checkbox" value="doublecolorball">双色球
+        </p>
+        <p>生日：<input name="bd" type="date"></p>
+
+        <select name="form" id="s1">
+                <option>上海</option>
+                <option>杭州</option>
+                <option>深圳</option>
+                <option>新西兰</option>
+        </select>
+
+        <select name="form1" id="s2">
+            <optgroup label="北京">
+                <option value="cp">昌平</option>
+                <option value="cy">朝阳</option>
+                <option value="hd">海定</option>
+                <option value="ft">丰台</option>
+            </optgroup>
+            <optgroup label="上海">
+                <option value="pd">浦东</option>
+                <option value="mh">闵行</option>
+                <option value="hp">黄埔</option>
+            </optgroup>
+            <optgroup label="四川">
+                <option value="pzh">攀枝花</option>
+                <option value="zg">自贡</option>
+                <option value="my">绵阳</option>
+            </optgroup>
+        </select>
+
+        <p>
+            <textarea name="info" id="i1" cols="30" rows="10">
+
+            </textarea>
+        </p>
+
+        <p>
+            头像：
+            <input type="file">
+        </p>
+
+
+        <p><input type="submit" value="提交s9"></p>
+        <p><input type="button" value="button"></p>
+        <p><input type="reset" value="reset"></p>
+
+    </form>
+
+</body>
+</html>

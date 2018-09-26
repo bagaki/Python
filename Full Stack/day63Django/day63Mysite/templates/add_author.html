@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>add_author</title>
+</head>
+<body>
+
+<h1>Add The New Author</h1>
+
+<form action="/add_author/" method="post">
+    <p>
+        <label>Author:
+            <input type="text" name="author_name">
+        </label>
+    </p>
+
+    <p>
+        <label>Book:
+            <select multiple name="books">
+                {% for book in book_list %}
+                    <option value="{{ book.id }}">{{ book.title }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </p>
+
+    <p>
+        <label>
+            <input type="submit" value="Submit">
+        </label>
+    </p>
+</form>
+
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

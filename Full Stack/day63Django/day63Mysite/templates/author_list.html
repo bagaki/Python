@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>author_list</title>
+</head>
+<body>
+
+<a href="/add_author/">Add The New Author</a>
+
+<h1>All The Author</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Book Name</th>
+        <th>Option</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for author in author_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ author.id }}</td>
+            <td>{{ author.name }}</td>
+            <td>
+                {% for book in author.book.all %}
+                    {% if forloop.last %}
+                        {{ book.title }}
+                    {% else %}
+                        {{ book.title }},
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                <a href="/edit_author/?id={{ author.id }}" class="btn btn-danger">Edit</a>
+                <a href="/delete_author/?id={{ author.id }}" class="btn btn-info">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

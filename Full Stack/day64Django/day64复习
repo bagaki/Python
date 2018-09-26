@@ -1,0 +1,24 @@
+1.ORM外键操作
+    图书表和出版社表  多对一 的关系
+
+2.查、增、删、改操纵
+    1.查
+        book_list = models.Book.objects.all()
+
+    2.增
+        new_book_obj = models.Book.objects.create(
+            title = "new name",
+            publisher = publisher_obj,
+            publisher_id = 7
+        )
+
+    3.删
+        models.Book.objects.get(id=10).delete()
+
+    5.改
+        book_obj = models.Book.objects.get(id=9)
+        book_obj.title = request.POST.get("book_title")
+        book_obj.publisher = 9
+        book_obj.save()
+
+今日内容请看day63的mysite

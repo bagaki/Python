@@ -1,0 +1,65 @@
+与day60Django基本相似
+
+HTTP:
+    无状态、短连接
+TCP：
+    不断开
+web应用（网站）：
+    HTTP协议
+        发送：
+            request headers
+        响应：
+            response headers
+
+        用户再页面看到的内容“字符串”（看到页面效果，由于浏览器解析）
+
+    浏览器（socket客户端）
+        2.www.cnblogs.com(ping www.cnblogs.com)
+            sk.socket()
+            sk.connect()
+            sk.send('')
+        5.接收
+        6.连接断开
+
+    博客园（socket服务端）
+        1.监听ip和端口
+            while True:
+                用户 = 等待用户连接
+                3.收到''
+                4.响应：'yes'
+                用户断开
+
+
+1.自己开发web框架
+    socket
+    http协议
+    HTML知识
+    数据库（pymysql, SQLAlchemy）
+
+
+   1.HTTP,无状态，短链接
+   2.
+        浏览器（socket客户端）
+        网站（socket服务端）
+   3.自己写网站
+        a.sicket服务端
+        b.根据URL不同返回不同的内容
+            路由系统
+                URL->函数
+        c.字符串返回给用户
+            模板引擎渲染：
+                HTML充当模板（特殊字符）
+                自己创造任意数据
+            字符串
+   4.web框架
+        框架种类：
+            a,b,c --> tornado
+            b,c --> wsgiref --> Django
+            b   --> flask
+
+        分类：
+            Django框架
+            其他
+
+2.Django框架
+

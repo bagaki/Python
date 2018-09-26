@@ -1,0 +1,45 @@
+1.单表的增删改查
+    1.删和改
+        1.GE请求 URL传值
+            1.格式
+                127.0.0.1:8000/delete_publisher/?name=alex&id=7
+            2.Django后端取值
+                request.GET  -->  大字典
+                request.GET["name"]/request.GET["ID"]
+                request.GET.get("name", "sb")
+
+        2.POST方法提交的数据怎么取：
+            request.POST.get("key")
+
+        3.ORM操作
+            1.删除
+                1.先找到对象，调用对象的.delete()方法
+                    publisher_obj = models.Publisher.objects.get(id=7)
+                    publisher_obj.delete()
+                或
+                    models.Publisher.objects.get(id=7).delete()
+
+            2.修改
+                1.找到对象，通过修改对象的属性来修改数据库中指定字段段的值，要保存
+                    publisher_obj = models.Publisher.objects.get(id=7)
+                    publisher_obj.name = "new obj"
+                    publisher_obj.save()  -->  吧修改提交刀数据库
+
+    2.GET和POST
+        1.GET请求：
+            1.GET请求携带的数据都拼在了URL上
+            2.GET请求携带的数据有长度限制 40k
+        2.POST请求
+            1.form表单提交数据
+            2.上传文件
+        3.几个GET请求具体的应用场景：
+            1.浏览器地址栏直接出入URL
+            2.点击a标签
+            3.搜索引擎检索
+
+    3.request相关的知识点
+        1.request.method
+            1.GET
+            2.POST
+        2.request.POST -->  所有和post请求相关的数据
+        3.request.GET  -->  所有和get请求相关的数据

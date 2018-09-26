@@ -1,0 +1,7 @@
+简述ORM原理
+
+把类和对象操作，转换为SQL语句
+再调用第三方例如pymysql,帮助我们连接数据库
+
+ps:
+    code first   db first

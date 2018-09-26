@@ -1,0 +1,9 @@
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:24] ERROR The input is not number
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:27] DEBUG debug message
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:28] INFO info message
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:29] WARNING warning message
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:30] ERROR error message
+Sat, 04 Aug 2018 17:53:18 day29logging.py[line:31] CRITICAL critical message
+2018-08-04 18:08:10,206 - root - WARNING - warning message
+2018-08-04 18:08:10,217 - root - ERROR - error message
+2018-08-04 18:08:10,217 - root - CRITICAL - critical message

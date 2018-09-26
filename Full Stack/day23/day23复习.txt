@@ -1,0 +1,55 @@
+# 定义类
+	class
+	函数：方法    动态属性
+	变量：类属性  静态属性
+
+# init方法
+	初始化方法
+	python帮我们创建了一个对象
+	每当我们调用类的时候，就会自动触发这个方法。默认传self
+	在init方法里面可以对self进行赋值
+
+# self是什么  self拥有属性都属于对象
+	在类的内部，self就是一个对象
+	alex = Person()
+	alex.walk() == Person.walk(alex)
+
+# 类中可以定义静态属性
+# 类中可以定义方法，方法都有一个必须传的参数self
+
+# 实例化
+	对象 = 类(参数事inie方法的)
+
+# 实例、对象
+# 对象查看属性
+	对象.属性名
+
+# 对象调用方法
+	对象.方法名(参数)   # 类名.方法名(对象名，参数)
+
+# 正方形 周长和面积
+class Squir(object):
+	def __init__(self, a):
+		self.a = a
+
+	def area(self):
+		return self.a * self.a
+
+	def perimeter(self):
+		return self.a * 4
+
+squir = Squir(9)
+area1 = squir.area()
+per1 = squir.perimeter()
+print(area1, per1)
+
+# 完成人狗大战
+# 默写 交互文件
+
+
+# python入门
+# 需求 能翻译成python语言
+
+# 面向对象入门
+# 当你剪刀一个需求，你能分析出这个问题适不适合用面向对象解决
+# 如果适合，你能有一些降法

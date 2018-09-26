@@ -1,0 +1,71 @@
+1、以ATM引出DBMS
+2、MySQL
+    服务端
+    客户端
+3、通信交流
+    授权操作
+    SQL语句
+        数据库
+            create databases db1;
+            create databases db1 charset=utf8;
+
+            drop databases db1;
+
+        数据表
+            先创建tb2部门表
+            create tables tb1用户表(
+                id int not null auto_increment primary key,
+                name char(10),
+                department_id int,
+                constraint fk foreign key(department_id) references 表名(tid)
+            )engine=innodb default charset=utf8;
+
+            补充：外键
+            CREATE TABLE t1(
+                nid int(11) NOT NULL AUTO_INCREMENT PROMARY KEY,
+                pid int(11) DEFAULT NULL,
+                num int(11) DEFAULT NULL
+            )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+            create tablet2(
+             id int auto_increment primary key,
+             name char(10),
+             id1 int,
+             id2 int,
+             CONSTRAINT fk_t1_t2 foreign key (id1, id2) REFERENCES t1 (nid, pid)
+            )engine=innodb default charset=utf8;
+
+        数据行
+            insert into tb1 (name,age) value ('alex', 18);
+
+            delete from tb1;
+            truncate table tb1;  # 让自增重新开始
+            delete fro tb1 where id > 10;show create table t10;
+
+            update tb1 set name='root' where id > 10
+
+            select * from tb;
+            select id,name from tb;
+
+    对于自增：
+        desc 表名
+             查看表里的字段
+
+        看看怎么创建
+            show create table t10;
+            show create table t10 \G;   # 竖着查看
+        修改自增的值
+            alter table t10 AUTO_INCREMENT=20;
+
+    MySQL:自增补偿
+        查看全局变量
+        show session variables like 'auto_inc%';
+        基于会话级别
+        set session auto_incremnet_increment = 2;
+        设置起始值
+        set session auto_increment_offset = 10;
+
+         基于全局级别
+         show global variables like 'auto_inc%';
+         set global auto_increment_increment = 2;
+         set global auto_increment_offset = 10;

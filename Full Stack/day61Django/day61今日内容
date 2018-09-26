@@ -1,0 +1,61 @@
+1.登录的完整示例
+
+复习：
+    1.action属性控制往哪儿提交，method一般都设置成post
+    2.提交按钮必须是type=submit，不能是别的类型
+
+2.GET请求和POST请求
+	GET请求：
+		1.浏览器请求一个页面
+		2.搜索引擎检索关键字的时候
+	POST请求：
+		1.浏览器向服务端提交数据
+
+3.Djamgo中的APP：
+    什么是APP？以及为什么要用APP
+
+    project -->  项目
+
+    APP     -->  应用
+
+    方便我们在一个大的Django项目中，管理实现不同的业务功能
+
+    1.创建APP的敏玲
+        1.命令行，在Django项目的根目录输入：
+            python manage.py startapp app名字
+
+
+4.ORM
+    python语句  --自动翻译-->  SQL语句
+    优点：
+        简单，不用自己写SQL语句
+        开发效率高
+    缺点：
+        记忆特殊语法
+        相对大神的sql语句，执行效率有差距
+
+    ORM的对应关系：
+    类   -->   数据表
+    对象 -->   数据行
+    属性 -->   字段
+
+    ORM能做的事：
+        1.操作数据表   -->   创建表/删除表/修改表
+        2.操作数据行   -->   数据的增删改查
+
+        不能创建数据库，要自己动手创建数据库
+
+    使用Django的ORM详细步骤：
+        1.自己动手创建数据库
+        2.在Django项目中设置连接数据库的相关配置（告诉Django连接那一个数据库）
+        3.告诉Django用pymysql代替默认的MySQLDB 连接MySQL数据库
+            在项目/__init__.py文件中，写下面两句：
+                import pymysql
+                # 告诉Django用pymysql来代替默认的MySQLDB
+                pymysql.install_as_MySQLdb()
+        4.在app下面的models.py文件中定义一个类，这个类必须继承models.Model
+            class 类名(models.Model):
+                ...
+        5.执行两个命令：
+            1.python manage.py makemigrations  # 记录models.py里的改动
+            2.python manage.py migrate         # 把改动翻译成SQL语句，去数据库执行

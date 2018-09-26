@@ -1,0 +1,39 @@
+1.web框架的本质
+    本质socket
+    HTTP协议
+        请求头
+        请求体
+    字符串
+
+2.Django
+    安装
+    django-admin startproject 文件名
+    配置
+        模板路径
+        静态文件
+        CSRF注释
+    url.py
+        url -> 函数
+    函数：
+        def index(request):
+            request.method
+            request.GET
+            request.POST
+
+            return HttpResponse()
+            return render(request, '模板路径',{})
+            return redirect('URL')
+
+    模板渲染
+        def index(request):
+            return render(request, '模板路径', {
+                'k1':'v1',
+                'k2':[1,2,32,34],
+                'k3':{x},
+            })
+        index.html
+            <h1>{{ k1 }}</h1>
+            <h1>{{ k2.2 }}</h1>
+            {% for item inn k2 %}
+                <h1>{{ item }}</h1>
+            {% endfor %}

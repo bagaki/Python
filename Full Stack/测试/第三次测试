@@ -1,0 +1,174 @@
+一、基础知识
+1、文件操作有哪些模式？请简述个模式的作用
+    r:读  w：写  a：增加  rb  wb  ab  r+  w+  a+
+2、s = '**hello,world!**'请使用strip方法去掉字符串两端的'*'号
+    s.strip('*')
+3、用户输入一个任意数字n，求1-n之间所有数字种的奇数
+     range(1, n, 2)
+4、s = 'dhshkdjks'，请去除s字符串重复的字母
+     set(s)  # 无序
+     l = []
+     for i in s:
+         if i not in l:
+             l.append(i)
+5、a=10
+    b = 20
+    def test5(a,b):
+        print(a,b)
+    c = test(b,a)
+    print(c)
+    上述代码种，打印出来的值a,b,c分别是什么？为什么？
+    a = 20, b = 10, None(因为没有返回值，所以c是None)
+
+6、s = '123.33sdf3424.24ssjhkhksf323.33'，计算字符串种所有数字的和
+    本题结果应为：123.33+3424.24+323.33
+    from re import findall
+    ret = findall('(\d+\.\d)|\d+',s)   # ret = '+'.join(ret)
+    # 精确位数
+    ret = [float(i) for i in ret]  # eval(ret)
+    print(sum(ret))
+
+7、d = {'k1':'v1','k2':[1,2,3],('k','3'):{1,2,3}
+    请用程序实现：
+    1）输出上述字典种value为列表的key
+        for k in d:
+            if type(d[k]) is list:
+                print(k)
+    2）如果字典中的key是一个元组，请输出对应的value值
+        for k in d:
+            if type(d[k]) is tuple:
+                print(d[k])
+    3）d['k','3]对应的value是一个什么数据类型
+        集合
+
+8、如果不适用@wrapper装饰器，请在a()之前加入一句代码，达到相同效果
+    def wrapper(func):
+        def inner(*args, **kwargs):
+            func(*args, **kwagrs)
+        return inner
+
+     @wrapper
+     def a(arg):
+        print(arg)
+
+     a = wrapper(a)
+     a()
+
+9、请处理文件7th_questions,输出所有以'T'开头的行
+   with open('7th_questions') as f:
+       for i in f:
+           if i.startwith('T'):
+               return i
+10、读登录文件夹中的代码，请为这段代码画流程图
+
+11、默写10个字符串的内置方法，描述它的作用
+
+12、有如下代码，写出调用的顺序以及结果
+def f1():
+    print('funcname is f1')
+
+def f2():
+    print('funcname is f2')
+    return 1
+
+def f3(func1):
+    l1 = func1()
+    print('funcname is f3')
+    return l1
+
+print(f3(f2))
+
+13、创建一个闭包韩素需要满足哪几点
+    内部嵌套函数
+    内部函数用到外部函数的变量
+
+14、将时间打印出成一个2018/10/01 18:00:02
+    将"2018-10-01 18:00:02"
+    time.structtime
+
+15、用什么模块能知道文件夹存不存在
+    怎么获取这个文件夹大小
+    os.path.isdir
+    循环文件夹里所有的大小，然后把大小加起来
+
+16、请写出一个能够匹配手机号的正则语句
+    1[3456789][\d]{9}
+
+17、有四个数字：1,2,3,4能组成多少个互不相同且无重复数字的三位数?各多少？（编程题）
+    count = 0
+    for i in range(1,5):
+         for j in range(1,5):
+              for k in range(1, 5):
+                   if i == j or i == k or j == k:
+                        continue
+                   count += 1
+                   # yield str(i) + str(j) + str(k)
+                   print(str(i) + str(j) + str(k))
+
+二、面向对象
+1、请简述类、对象、实例化这些名词的含义
+2、面向对象的三大特性是什么? 封装 继承 多态
+3、有一个类的定义：
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    1)初始化10个不同的对象
+    2)求最高age的对象的name
+    def func(obj):
+        return obj.age
+        max(obj_lst, key=func)
+
+        max(obj_lst, key=lambda obj:obj.age)
+        print(obj.name)
+
+4、模拟cs游戏
+    1) 任务角色分为警察和土匪两种，定义成两个类
+        所有的警察的角色都是police
+        每个警察都有自己独有名字，生命之，武器，性别
+        每个都可以开枪攻击敌人，切攻击目标不能是police
+
+        所有的警察的角色都是terrorist
+        每个土匪都有自己的名字，生命之，武器，性别
+        每个都可以开枪攻击敌人，且攻击目标不能是terrorist
+
+    2)实例化一个警察，一个土匪，警察攻击土匪，土匪掉血
+
+    3)提取警察类和土匪类相似之处定义成一个父类，使用继承的方式减少代码重复
+
+5、读代码
+class Base():
+    def f1(self):
+        self.f2()
+
+    def f2(self):
+        print('...')
+
+class Foo(Base):
+   def f2(self):
+       print('999')
+
+obj = Foo()
+obj.f1()
+
+问题1 ：面向对象中的self指的是什么
+问题2： 运行结果并简述原因
+
+
+附加题
+有一个类的init方法如下：
+class Person(object):
+    def __init__(self, name, age, sex, weight):
+        self.name = name
+        self.age = age
+        self.sex = sex
+        self.weight = weight
+
+
+     假设有100个person的对象
+     若两个对象obj1，obj2的name和sex属性相同
+     即obj1.name == obj2.name and obj1.sex == obj2.sex
+     我们认为两个对象为同一个对象，已知一个列表中的100个对象，对这100个对象进行去重
+     提示：
+         重写Person类中的两个内置方法

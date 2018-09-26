@@ -1,0 +1,64 @@
+1.Django
+    1.安装
+        1.Django版本
+        2.安装方式
+            1.命令行  -->  Python环境
+            2.PyCharm安装
+    2.创建Django项目
+        1.创建方式
+            1.命令行创建方式
+                1.cd到要保存Django项目的目录
+                2.djnago-admin startproject 项目名
+            2.PyCharm创建方式
+                1.file --> new project --> ...
+                2.创建完之后一ing要选在新窗口打开
+    3.配置Django项目
+        1.settings.py文件
+            1.templates文件夹的位置
+            2.静态文件
+                1.STATIC_URL        -->  静态文件夹的别名（在HTML文件中用的）
+                2.STATICFILES_DIRS  -->  静态文件夹的真正路径
+            3.注释掉csrf相关的中间件
+            4.Django项目连接的数据库信息
+    4.Django WEB 请求流程（简版）
+        1.启动Django项目，等待用户连接
+        2.浏览器在地址栏输入URL，来连接我的Django项目
+        3.在url.py中找路径和函数的对应关系
+        4.执行对应的函数
+        5.返回响应
+    5.views.py
+        1.专门用来定义处理请求的函数
+            1.基本必备三件套
+                from django.shortcuts import render, HttpResponse, redirect
+                1.HttpResponse("要返回的内容")              -->  通常用于直接返回数据
+                2.render(request, "html文件", {"k1":"v1"})  -->  返回一个HTML文件或者打开文件进行字符串替换
+                3.redirect("URL")
+                	告诉用户的浏览器去访问其他的URL
+
+            2.request相关
+            	1.request.method  -->  查看请求的方法
+            	2.request.POST    -->  获取POST请求的数据
+
+    6.ORM使用
+    	1.什么是ORM
+    		是一个编程的方法论（模型），和语言无关（其他的语言也有类似的实现）
+    	
+    	2.PRM的本质
+    		类    -->  数据表
+    		对象  -->  数据行
+    		属性  -->  字段
+
+    		按照规定的语法写，自动翻译成对应的SQL语句
+
+    	3.ORM的功能
+    		ORM操作数据表
+    		ORM操作数据行
+
+    	4.Django里的ORM的使用
+    		1.手动创建数据库
+    		2.在settings.py里面，配置数据库的连接信息
+    		3.在项目/__init__.py告诉Django用pymysql模块代替MySQL来连接MySQL数据库
+    		4.在MyApp/models.py里面定义类
+    		5.执行两个命令
+    			1.python manage.py makemigrations --> 将models.py里的更改记录到文件下
+    			2.python manage.py migrate  -->  把更改翻译成SQL语句，去数据库执行

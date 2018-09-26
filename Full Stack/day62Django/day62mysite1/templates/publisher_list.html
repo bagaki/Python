@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>publisher_list</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Num</th>
+        <th>id</th>
+        <th>Name</th>
+        <th>Option</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for publisher in publisher_list%}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td> {{ publisher.id }} </td>
+        <td> {{ publisher.name }} </td>
+        <td>
+            <a href="/edit_publisher/?id={{ publisher.id }}">Edit</a>
+            <a href="/del_publisher/?id={{ publisher.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="/add_publisher/">Add New Publisher</a>
+
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+html {
+    min-height: 100%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+body {
+    margin-bottom: 70px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+
+    border-top: 1px solid #e7e7e7;
+}
+.footer .container {
+    padding-top: 15px;
+}
+
+.browser-menu {
+    margin-bottom: 10px;
+}
+.browser-menu .btn-group {
+    margin-bottom: 10px;
+}
+
+.new-releases-alert {
+    display: none;
+}
+
+.btn .confirmation,
+.btn .success {
+    display: none;
+}
+
+.release h3 {
+    margin-top: 0;
+}
+.release blockquote {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.mycomics-toggle {
+    margin-left: 15px;
+}
+
+.meta {
+    margin-bottom: 0;
+}
+
+.comics-list {
+    margin-bottom: 20px;
+}
+.comics-list a {
+    color: #404040;
+}
+.comics-list li {
+    border-bottom: 1px solid #eee;
+    padding: 3px 0;
+}
+.comics-list label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.comics-list .label {
+    margin-left: 3px;
+}
+.comics-list .subscribed,
+.comics-list .subscribed label {
+    font-weight: bold;
+}
+.comics-list .inactive {
+    opacity: 0.4;
+}
+
+#status td,
+#status_legend td {
+    text-align: center;
+}
+#status .scheduled,
+#status .scheduled a,
+#status_legend .scheduled {
+    background: #f2dede;
+    color: #a94442;
+}
+#status .fetched,
+#status .fetched a,
+#status_legend .fetched {
+    background: #d9edf7;
+    color: #31708f;
+}
+#status .fetched.scheduled,
+#status .fetched.scheduled a,
+#status_legend .fetched.scheduled {
+    background: #dff0d8;
+    color: #3c763d;
+}
+#status_legend {
+    width: auto;
+}

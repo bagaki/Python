@@ -1,0 +1,100 @@
+{% extends base.html %}
+
+{% load static from staticfiles %}
+{% block linkscript %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'myself/myself.css' %}">
+<script type="text/javascript" src="{% static 'myself/myself.js' %}"></script>
+
+{% endblock linkscript %}
+
+{% block base %}
+
+<div id="myself">
+    <section class="fixed">
+        <span class="glyphicon glyphicon-user"></span>
+        <p><a href="/login/">{{ username }}</a></p>
+        <p><span class="glyphicon glyphicon-user"></span><span>Level</span></p>
+        <p><a id="regist" href="/register/">Register</a></p>
+    </section>
+    <section class="mime">
+        <p>
+            <span>Coin</span>
+            <span>Daemon</span>
+        </p>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">
+                    <dl>
+                        <dt><span></span></dt>
+                        <dd></dd>
+                    </dl>
+                </a></li>
+                <li><a href="#">
+                    <dl>
+                        <dt><span></span></dt>
+                        <dd></dd>
+                    </dl>
+                </a></li>
+                <li><a href="#">
+                    <dl>
+                        <dt><span></span></dt>
+                        <dd></dd>
+                    </dl>
+                </a></li>
+            </ul>
+        </nav>
+
+        <menu>
+            <div>
+                <ul>
+                    <li>
+                        <a>
+                            <dl>
+                                <dt><span class="glyphicon glyphicon-bullhorn"></span></dt>
+                                <dd>VIP</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <dl>
+                                <dt><span class="glyphicon glyphicon-credit-card"></span></dt>
+                                <dd>Local Comic</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <dl>
+                                <dt><span class="glyphicon glyphicon-import"></span></dt>
+                                <dd>Event</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <dl>
+                                <dt><span class="glyphicon glyphicon-phone-alt"></span></dt>
+                                <dd>Faceback</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <dl>
+                                <dt><span class="glyphicon glyphicon-asterisk"></span></dt>
+                                <dd>About us</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </menu>
+
+        <p><a href="/quit/">Quit Out</a></p>
+    </section>
+</div>
+
+{% endblock base %}

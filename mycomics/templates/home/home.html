@@ -1,0 +1,111 @@
+{% extends base.html %}
+
+{% load static from staticfiles %}
+{% block linkscript %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
+<script type="text/javascript" src="{% static 'home.js' %}"></script>
+
+{% endblock linkscript %}
+
+{% block base %}
+
+<!--导航条-->
+<div>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <!--<img src="https://img.muji.net/img/common/logo-muji.svg" width="128" height="20"-->
+                <!--alt="無印良品">-->
+                Bagakiの部屋
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!--<form class="form-inline my-2 my-lg-0">-->
+                <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <img src="https://img.muji.net/img/common/icon-search.svg" width="16" height="16" alt="">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">漫画</a>
+                            <a class="dropdown-item" href="#">作者</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                           placeholder="请输入漫画书名或作者" style="width: 40%;">
+                </div>
+            </div>
+            <div class="navbar-nav mr-auto">
+                <div class="nav-item dropdown">
+                    <a class="nav-link " href="/myself/login/" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="https://img.muji.net/img/common/icon-account.svg" width="26" height="26" alt="">
+                        <span class="m-common__header__cart__label" style="display: block;">登录</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div>
+    <!-- 轮播 -->
+    <section class="swiper-container" id="topSwiper">
+        <div class="swiper-wrapper">
+            {% for item in wheelsList %}
+            <div class="swiper-slide">
+                <a href="#"><img src="{{item.img}}"></a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+    </section>
+
+    <section id="main">
+        <div class="menuBook">
+            <nav>
+                <ul>
+                    {% for i in comics %}
+                    <li>
+                        <a href="#">
+                            <img src="{{i.comicsImg}}"/>
+                            <span>{{i.comicsAuthor}}</span>
+                            <span>{{i.comicsName}}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </section>
+</div>
+
+<!--页脚-->
+<div>
+    <div>
+        <ul>
+            <li>
+                <a href="https://weibo.com/5915106664/profile?topnav=1&wvr=6&is_all=1" target="_blank">
+                    <img src="https://yuedust.yuedu.126.net/comic_static/web/images/index/logo.png?b7b05e79dc1446b21c1b6823861e9127" width="64">
+                </a>
+                <a><i class="icon-weibo f-ib">Bagaki漫画</i></a>
+            </li>
+            <li><a><img></a></li>
+            <li><a><img></a></li>
+        </ul>
+    </div>
+</div>
+
+{% endblock base %}
